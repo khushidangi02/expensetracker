@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mcu-host
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: expense.mcu.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: lb-svc
+            port:
+              number: 3000
