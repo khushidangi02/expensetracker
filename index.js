@@ -20,6 +20,9 @@ const pg = new Pool({
     database: 'expense',
     password: 'postgres1234',
     port: 5432,
+    ssl: {
+    rejectUnauthorized: false, 
+  },
 });
 
 const __filename = fileURLToPath(import.meta.url);
