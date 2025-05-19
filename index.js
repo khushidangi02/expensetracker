@@ -15,11 +15,11 @@ app.use(express.static("public"));
 app.use(express.json());
 
 const pg = new Pool({
-    user: process.env.DB_USER,         
-    host: process.env.DB_HOST,         
-    database: process.env.DB_NAME,     
-    password: process.env.DB_PASSWORD, 
-    port: 5432, 
+    user: 'postgres',
+    host: 'learndb.c70k80aa2698.eu-north-1.rds.amazonaws.com',
+    database: 'expense',
+    password: 'postgres1234',
+    port: 5432,
 });
 
 const __filename = fileURLToPath(import.meta.url);
